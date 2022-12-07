@@ -1,0 +1,10 @@
+# Byte-compiled / optimized / DLL files
+api/__pycache__/
+
+api/venv/
+
+api/.flaskenv
+
+api/app.db
+
+client/node_modules

@@ -3,7 +3,7 @@ from api.upload import bp
 from flask import request, jsonify
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
-from ..s3_functions import list_files, upload_file, show_image
+from ..s3_functions import upload_file
 
 @bp.route("/api/upload", methods=["POST"])
 def upload_image():

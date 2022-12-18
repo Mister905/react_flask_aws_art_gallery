@@ -21,6 +21,9 @@ def create_app():
     from api.upload import bp as upload_bp
     app.register_blueprint(upload_bp)
 
+    from api.gallery import bp as gallery_bp
+    app.register_blueprint(gallery_bp)
+
     app.config.from_object(Config)
     
     db.init_app(app)

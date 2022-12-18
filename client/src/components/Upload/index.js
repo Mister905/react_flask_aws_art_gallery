@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { upload_image } from "../../actions/upload";
 
 function Upload() {
-  const [image, set_image] = useState(
-    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-  );
+  const [image, set_image] = useState("");
   return (
     <React.Fragment>
       <div className="row">
@@ -31,14 +29,14 @@ function Upload() {
 
       <div className="row">
         <div className="col m12">
-          <Upload_Form />
+          <Upload_Form set_image={set_image} />
         </div>
       </div>
     </React.Fragment>
   );
 }
 
-function Upload_Form() {
+function Upload_Form({ set_image }) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -80,6 +78,8 @@ function Upload_Form() {
             type="file"
             onChange={(event) => {
               setFieldValue("image", event.currentTarget.files[0]);
+
+              set_image(URL.createObjectURL(event.currentTarget.files[0]));
             }}
           />
 

@@ -1,1 +1,2 @@
 export const UPLOAD_IMAGE = "UPLOAD_IMAGE";
+export const GET_GALLERY_LIST = "GET_GALLERY_LIST";

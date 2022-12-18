@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { upload_image } from "../../actions/upload";
 
 function Upload() {
   const [image, set_image] = useState(
@@ -64,7 +65,7 @@ function Upload_Form() {
     },
 
     onSubmit: (value) => {
-      console.log(value);
+      dispatch(upload_image(value, navigate));
     },
     validateOnChange: false,
     validateOnBlur: false,
